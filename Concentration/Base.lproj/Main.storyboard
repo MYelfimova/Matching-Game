@@ -46,7 +46,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoD-5k-vd6">
                                         <rect key="frame" x="179" y="0.0" width="179" height="93"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_score" translatesAutoresizingMaskIntoConstraints="NO" id="PLk-03-mtg">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_timer" translatesAutoresizingMaskIntoConstraints="NO" id="PLk-03-mtg">
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="103"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -247,18 +247,21 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="190" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GO7-fh-LzT">
-                                <rect key="frame" x="21" y="698" width="333" height="81"/>
+                                <rect key="frame" x="21" y="697" width="333" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82v-4f-Lxm">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="81"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="82"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                        <state key="normal" title="Snd" backgroundImage="btn_pause">
+                                        <state key="normal" backgroundImage="btn_sound_on">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SoundOnOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdw-mf-BXB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABc-7d-o7c">
-                                        <rect key="frame" x="261.66666666666669" y="0.0" width="71.333333333333314" height="81"/>
+                                        <rect key="frame" x="261.66666666666669" y="0.66666666666662877" width="71.333333333333314" height="81"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" backgroundImage="btn_pause">
                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -319,5 +322,7 @@
         <image name="btn_card" width="80" height="80"/>
         <image name="btn_pause" width="80" height="81"/>
         <image name="btn_score" width="350" height="116"/>
+        <image name="btn_sound_on" width="80" height="82"/>
+        <image name="btn_timer" width="343" height="116"/>
     </resources>
 </document>

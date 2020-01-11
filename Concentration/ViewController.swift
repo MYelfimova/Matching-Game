@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    var queuePlayer = AVQueuePlayer()
+    var playerLooper: AVPlayerLooper?
+    var bgMusicIsPlaying = true
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let url = Bundle.main.url(forResource: "bg_music", withExtension: "mp3") else { return }
+        let playerItem = AVPlayerItem(asset: AVAsset(url: url))
+        playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
+        queuePlayer.play()
+    }
+    
+    //var audioPlayer = AVAudioPlayer()
     
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
@@ -18,6 +34,19 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func SoundOnOff(_ sender: UIButton) {
+        if bgMusicIsPlaying == true{
+            queuePlayer.pause()
+            bgMusicIsPlaying = false
+            sender.setBackgroundImage(UIImage(named: "btn_sound_off.png"), for: .normal)
+
+        }
+        else {
+            queuePlayer.play()
+            bgMusicIsPlaying = true
+            sender.setBackgroundImage(UIImage(named: "btn_sound_on.png"), for: .normal)
+        }
+    }
     
     @IBOutlet private weak var pointsCountLabel: UILabel!
     
@@ -33,6 +62,13 @@ class ViewController: UIViewController {
     
     //BASICALLY this func allows me to react on the clicks on the cards
     @IBAction private func touchCard(_ sender: UIButton) {
+        //sound effect:
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Sounds/btn_click", ofType: "wav")))
+//        }
+//        catch {
+//            print(error)
+//        }
 
         //we find the index of the Button that was just clicked
         if let cardNumber = cardButtons.firstIndex(of: sender){
@@ -41,6 +77,7 @@ class ViewController: UIViewController {
         } else{
             print("this card is not in the cardButtons array!!")
         }
+        
     }
     
     // here I collate button(ui-element) and card(concentration element)

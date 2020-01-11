@@ -15,6 +15,10 @@
 		45E3A6B82387FC570077C891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E3A6B62387FC570077C891 /* Main.storyboard */; };
 		45E3A6BA2387FC5F0077C891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E3A6B92387FC5F0077C891 /* Assets.xcassets */; };
 		45E3A6BD2387FC5F0077C891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E3A6BB2387FC5F0077C891 /* LaunchScreen.storyboard */; };
+		4C2CD76523CA0FFE001C498E /* card_match.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76123CA0FFE001C498E /* card_match.wav */; };
+		4C2CD76623CA0FFE001C498E /* btn_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76223CA0FFE001C498E /* btn_click.wav */; };
+		4C2CD76723CA0FFE001C498E /* bg_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76323CA0FFE001C498E /* bg_music.mp3 */; };
+		4C2CD76823CA0FFE001C498E /* card_flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76423CA0FFE001C498E /* card_flip.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		45E3A6B92387FC5F0077C891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45E3A6BC2387FC5F0077C891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45E3A6BE2387FC5F0077C891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2CD76123CA0FFE001C498E /* card_match.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = card_match.wav; path = sounds/card_match.wav; sourceTree = SOURCE_ROOT; };
+		4C2CD76223CA0FFE001C498E /* btn_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = btn_click.wav; path = sounds/btn_click.wav; sourceTree = SOURCE_ROOT; };
+		4C2CD76323CA0FFE001C498E /* bg_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bg_music.mp3; path = sounds/bg_music.mp3; sourceTree = SOURCE_ROOT; };
+		4C2CD76423CA0FFE001C498E /* card_flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = card_flip.wav; path = sounds/card_flip.wav; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +77,20 @@
 				45E3A6B92387FC5F0077C891 /* Assets.xcassets */,
 				45E3A6BB2387FC5F0077C891 /* LaunchScreen.storyboard */,
 				45E3A6BE2387FC5F0077C891 /* Info.plist */,
+				4C2CD76023CA0FD3001C498E /* Sounds */,
 			);
 			path = Concentration;
+			sourceTree = "<group>";
+		};
+		4C2CD76023CA0FD3001C498E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD76323CA0FFE001C498E /* bg_music.mp3 */,
+				4C2CD76223CA0FFE001C498E /* btn_click.wav */,
+				4C2CD76423CA0FFE001C498E /* card_flip.wav */,
+				4C2CD76123CA0FFE001C498E /* card_match.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +151,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2CD76523CA0FFE001C498E /* card_match.wav in Resources */,
+				4C2CD76723CA0FFE001C498E /* bg_music.mp3 in Resources */,
 				45E3A6BD2387FC5F0077C891 /* LaunchScreen.storyboard in Resources */,
+				4C2CD76623CA0FFE001C498E /* btn_click.wav in Resources */,
 				45E3A6BA2387FC5F0077C891 /* Assets.xcassets in Resources */,
+				4C2CD76823CA0FFE001C498E /* card_flip.wav in Resources */,
 				45E3A6B82387FC570077C891 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
