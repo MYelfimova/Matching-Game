@@ -13,6 +13,8 @@ struct Concentration {
     //initialising a set of cards
     private(set) var cards = [Card]()
     
+    var makeMatchSound = false
+    
     //var flipsCount = 0
     private(set) var pointsCount = 0
     
@@ -47,7 +49,7 @@ struct Concentration {
         
         //flipsCount += 1 // flipsCounter
         if !cards[index].isMatched{
-            // HERE I SET hasBeenMatched PROPERTY
+            // HERE I SET hasBeenSeen PROPERTY
             if let matchIndex = indexOfOneAndOnlyCardFaceUp, matchIndex != index {
                 
                 // check if cards match
@@ -55,7 +57,17 @@ struct Concentration {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                     pointsCount = pointsCount+2 //+2 points when matched
+                    
+                    //additional variable for matchSound =)
+//                    if indexOfOneAndOnlyCardFaceUp! > 0 && makeMatchSound == false {
+//                        makeMatchSound = true
+//                    } else {
+//                        makeMatchSound = false
+//                    }
+                    //makeMatchSound = (makeMatchSound == false) ? true : false
+                    makeMatchSound = true
                 } else{
+                    makeMatchSound = false
                     if cards[index].hasBeenSeen && cards[matchIndex].hasBeenSeen {
                         pointsCount = pointsCount-2
                         

@@ -11,9 +11,16 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    // defining all my sounds <
+    var audioPlayer = AVAudioPlayer()
     var queuePlayer = AVQueuePlayer()
     var playerLooper: AVPlayerLooper?
     var bgMusicIsPlaying = true
+    
+    let buttonClickSound = URL(fileURLWithPath: Bundle.main.path(forResource: "btn_click", ofType: "wav")!)
+    let cardFlipSound = URL(fileURLWithPath: Bundle.main.path(forResource: "card_flip", ofType: "wav")!)
+    let cardMatchSound = URL(fileURLWithPath: Bundle.main.path(forResource: "card_match", ofType: "wav")!)
+    // >finished defining all my sounds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +31,6 @@ class ViewController: UIViewController {
         queuePlayer.play()
     }
     
-    //var audioPlayer = AVAudioPlayer()
-    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
@@ -35,11 +40,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func SoundOnOff(_ sender: UIButton) {
+        playSound(soundName: buttonClickSound)
         if bgMusicIsPlaying == true{
             queuePlayer.pause()
             bgMusicIsPlaying = false
             sender.setBackgroundImage(UIImage(named: "btn_sound_off.png"), for: .normal)
-
         }
         else {
             queuePlayer.play()
@@ -51,7 +56,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var pointsCountLabel: UILabel!
     
     @IBAction func newGame(_ sender: UIButton) {
-        print("New Game button is clicked")
+        playSound(soundName: buttonClickSound)
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         updateViewFromModel()
         emojiTheme = updateEmoji(5.arc4random)
@@ -63,16 +68,14 @@ class ViewController: UIViewController {
     //BASICALLY this func allows me to react on the clicks on the cards
     @IBAction private func touchCard(_ sender: UIButton) {
         //sound effect:
-//        do {
-//            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Sounds/btn_click", ofType: "wav")))
-//        }
-//        catch {
-//            print(error)
-//        }
-
+        playSound(soundName: cardFlipSound)
         //we find the index of the Button that was just clicked
         if let cardNumber = cardButtons.firstIndex(of: sender){
             game.chooseCard(at: cardNumber)
+            if game.makeMatchSound {
+                playSound(soundName: cardMatchSound)
+                game.makeMatchSound = false
+            }
             updateViewFromModel()
         } else{
             print("this card is not in the cardButtons array!!")
@@ -91,6 +94,7 @@ class ViewController: UIViewController {
             } else {
                 button.setTitle("", for: UIControl.State.normal)
                 if card.isMatched {
+
                     button.setBackgroundImage(nil, for: .normal)
                 } else {
                     button.setBackgroundImage(UIImage(named: "btn_card.png"), for: .normal)
@@ -101,6 +105,15 @@ class ViewController: UIViewController {
     }
     private func updateLabels(points: Int ) {
         pointsCountLabel.text = "\(points)"
+    }
+    
+    private func playSound(soundName:URL){
+        do {
+             audioPlayer = try AVAudioPlayer(contentsOf: soundName)
+             audioPlayer.play()
+        } catch {
+           print("couldn't load file :\(soundName)")
+        }
     }
       
     private lazy var emojiTheme = updateEmoji(5.arc4random)
