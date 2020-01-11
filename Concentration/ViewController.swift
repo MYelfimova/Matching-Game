@@ -18,14 +18,12 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var flipCountLabel: UILabel!
     
     @IBOutlet private weak var pointsCountLabel: UILabel!
     
     @IBAction func newGame(_ sender: UIButton) {
         print("New Game button is clicked")
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        game.flipsCount = 0
         updateViewFromModel()
         emojiTheme = updateEmoji(5.arc4random)
     }
@@ -62,23 +60,10 @@ class ViewController: UIViewController {
                 }
             }
         }
-        updateLabels(flips: game.flipsCount, points: game.pointsCount)
+        updateLabels(points: game.pointsCount)
     }
-    private func updateLabels(flips: Int, points: Int ) {
-        var attributes: [NSAttributedString.Key: Any] = [:]
-        if points < 0 {
-            attributes = [.foregroundColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)]
-        } else if points >= 5 {
-            attributes = [
-                .foregroundColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1),
-                .strokeWidth: 5.0]
-        } else {
-            attributes = [.foregroundColor: #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
-        }
-        let attributeString = NSAttributedString(string: "Points: \(points)", attributes: attributes)
-        pointsCountLabel.attributedText = attributeString
-            
-        flipCountLabel.text = "Flips: \(game.flipsCount)"
+    private func updateLabels(points: Int ) {
+        pointsCountLabel.text = "\(points)"
     }
       
     private lazy var emojiTheme = updateEmoji(5.arc4random)

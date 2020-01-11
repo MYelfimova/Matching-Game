@@ -13,7 +13,7 @@ struct Concentration {
     //initialising a set of cards
     private(set) var cards = [Card]()
     
-    var flipsCount = 0
+    //var flipsCount = 0
     private(set) var pointsCount = 0
     
     private var indexOfOneAndOnlyCardFaceUp: Int? {
@@ -45,7 +45,7 @@ struct Concentration {
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)")
         
-        flipsCount += 1 // flipsCounter
+        //flipsCount += 1 // flipsCounter
         if !cards[index].isMatched{
             // HERE I SET hasBeenMatched PROPERTY
             if let matchIndex = indexOfOneAndOnlyCardFaceUp, matchIndex != index {
