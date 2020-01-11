@@ -1,2 +1,2 @@
-# Matching-Game
-Matching game for adults. Let's train your memory!
+# Concentration
+A concentration game, where you flip over card andget points

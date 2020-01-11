@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CA2C7B90-97C3-4D2A-81D5-FBD74C534562"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2784EFB3-F826-4430-A897-0047E362AD0E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Concentration/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - d8caa9fe96133615"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.emoji.getter : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - 5c7c37373eb16a61"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.emoji.setter : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - 14bdd330b306bb12"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.emoji.modify : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - db6239a4c72ef73a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.emoji.modify : Swift.Dictionary&lt;Swift.Int, Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - a2d69746868efeab"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Concentration.ViewController"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1073">
+               </Location>
+               <Location
+                  uuid = "2784EFB3-F826-4430-A897-0047E362AD0E - 4b9b973f396f3820"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Concentration.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Concentration.ViewController&gt;"
+                  moduleName = "Concentration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/air/Desktop/Concentration-master/Concentration/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1004">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B372335A-C647-456D-826E-AC19D0423950"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Concentration.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "chooseCard(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
