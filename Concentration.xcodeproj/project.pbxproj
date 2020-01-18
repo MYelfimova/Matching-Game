@@ -19,6 +19,7 @@
 		4C2CD76623CA0FFE001C498E /* btn_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76223CA0FFE001C498E /* btn_click.wav */; };
 		4C2CD76723CA0FFE001C498E /* bg_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76323CA0FFE001C498E /* bg_music.mp3 */; };
 		4C2CD76823CA0FFE001C498E /* card_flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76423CA0FFE001C498E /* card_flip.wav */; };
+		4CDE7C9C23D30C6900AEEADD /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE7C9B23D30C6900AEEADD /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4C2CD76223CA0FFE001C498E /* btn_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = btn_click.wav; path = sounds/btn_click.wav; sourceTree = SOURCE_ROOT; };
 		4C2CD76323CA0FFE001C498E /* bg_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bg_music.mp3; path = sounds/bg_music.mp3; sourceTree = SOURCE_ROOT; };
 		4C2CD76423CA0FFE001C498E /* card_flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = card_flip.wav; path = sounds/card_flip.wav; sourceTree = SOURCE_ROOT; };
+		4CDE7C9B23D30C6900AEEADD /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				45E3A6B02387FC570077C891 /* AppDelegate.swift */,
 				45E3A6B22387FC570077C891 /* SceneDelegate.swift */,
 				45E3A6B62387FC570077C891 /* Main.storyboard */,
+				4CDE7C9B23D30C6900AEEADD /* PopUpViewController.swift */,
 				45E3A6B92387FC5F0077C891 /* Assets.xcassets */,
 				45E3A6BB2387FC5F0077C891 /* LaunchScreen.storyboard */,
 				45E3A6BE2387FC5F0077C891 /* Info.plist */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E3A6B52387FC570077C891 /* ViewController.swift in Sources */,
+				4CDE7C9C23D30C6900AEEADD /* PopUpViewController.swift in Sources */,
 				45233EBC2392D7D500E42823 /* Concentration.swift in Sources */,
 				45233EBE2392DEA600E42823 /* Card.swift in Sources */,
 				45E3A6B12387FC570077C891 /* AppDelegate.swift in Sources */,

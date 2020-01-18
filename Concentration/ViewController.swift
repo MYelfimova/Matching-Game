@@ -31,11 +31,11 @@ class ViewController: UIViewController {
         queuePlayer.play()
     }
     
-    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
         get {
-            return (cardButtons.count+1)/2
+            return (cardButtons == nil) ? 10 : (cardButtons.count+1)/2
         }
     }
     
@@ -53,20 +53,27 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var pointsCountLabel: UILabel!
+    @IBOutlet weak var pointsCountLabel: UILabel!
     
-    @IBAction func newGame(_ sender: UIButton) {
+    @IBAction func pausePopUp(_ sender: UIButton) {
         playSound(soundName: buttonClickSound)
-        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        updateViewFromModel()
-        emojiTheme = updateEmoji(5.arc4random)
+//        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+//        updateViewFromModel()
+//        emojiTheme = updateEmoji(5.arc4random)
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pausePopUpID") as! PopUpViewController
+        
+        self.addChild(popOverVC)
+        
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParent: self)
     }
     
     //BASICALLY allows me to generate as many cards as I want and to display on top of then whatever content I want
-    @IBOutlet private var cardButtons: [UIButton]!
+    @IBOutlet var cardButtons: [UIButton]!
     
     //BASICALLY this func allows me to react on the clicks on the cards
-    @IBAction private func touchCard(_ sender: UIButton) {
+    @IBAction func touchCard(_ sender: UIButton) {
         //sound effect:
         playSound(soundName: cardFlipSound)
         //we find the index of the Button that was just clicked
@@ -84,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     // here I collate button(ui-element) and card(concentration element)
-    private func updateViewFromModel(){
+    func updateViewFromModel(){
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -103,11 +110,11 @@ class ViewController: UIViewController {
         }
         updateLabels(points: game.pointsCount)
     }
-    private func updateLabels(points: Int ) {
+    func updateLabels(points: Int ) {
         pointsCountLabel.text = "\(points)"
     }
     
-    private func playSound(soundName:URL){
+    func playSound(soundName:URL){
         do {
              audioPlayer = try AVAudioPlayer(contentsOf: soundName)
              audioPlayer.play()
@@ -116,11 +123,11 @@ class ViewController: UIViewController {
         }
     }
       
-    private lazy var emojiTheme = updateEmoji(5.arc4random)
+    lazy var emojiTheme = updateEmoji(5.arc4random)
     
-    private var emoji = Dictionary<Card, String>()
+    var emoji = Dictionary<Card, String>()
     
-    private func updateEmoji(_ numberOfTheme:Int) -> [String] {
+    func updateEmoji(_ numberOfTheme:Int) -> [String] {
            return ([0: ["⚽","🥎","🏀","🏈","🎾","🎳","🏓","🎣","🥊","⛸"],
            1 :["🍇","🍈","🍉","🍊","🍋","🍌","🍍","🥭","🍎","🍑"],
            2: ["🥞","🍗","🥓","🍔","🍟","🍕","🌭","🥪","🌮","🌯"],
@@ -128,7 +135,7 @@ class ViewController: UIViewController {
            4: ["👻","🦇","🍎","🍬","🍪","😈","💀","🎃", "🧙🏻‍♀️","💨"]])[numberOfTheme]!
     }
     
-    private func emoji(for card: Card) -> String {
+    func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojiTheme.count > 0 {
             emoji[card] = emojiTheme.remove(at: emojiTheme.count.arc4random)
         }
