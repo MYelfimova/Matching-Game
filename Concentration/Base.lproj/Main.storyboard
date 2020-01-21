@@ -31,7 +31,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="CIW-cO-TVU"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -50,10 +50,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="103"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJv-Zf-DpA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJv-Zf-DpA">
                                                 <rect key="frame" x="66" y="46" width="83" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -246,11 +246,11 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="190" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GO7-fh-LzT">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="60" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GO7-fh-LzT">
                                 <rect key="frame" x="21" y="697" width="333" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82v-4f-Lxm">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="82"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <state key="normal" backgroundImage="btn_sound_on">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,14 +261,25 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABc-7d-o7c">
-                                        <rect key="frame" x="261.66666666666669" y="0.66666666666662877" width="71.333333333333314" height="81"/>
+                                        <rect key="frame" x="131" y="8" width="71" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" backgroundImage="pop_menu_reload_btn">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X4K-qm-QjV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMF-PF-6dG">
+                                        <rect key="frame" x="262" y="0.66666666666662877" width="71" height="81"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" backgroundImage="btn_pause">
                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
                                         <connections>
-                                            <action selector="pausePopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Yz-6M-pi8"/>
+                                            <action selector="pausePopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6OA-Hw-kRv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -291,6 +302,7 @@
                     </view>
                     <connections>
                         <outlet property="pointsCountLabel" destination="6JC-Nr-f03" id="rlS-Ow-AUJ"/>
+                        <outlet property="timerLabel" destination="tJv-Zf-DpA" id="zXs-1t-V4E"/>
                         <outletCollection property="cardButtons" destination="bWD-bb-1MT" collectionClass="NSMutableArray" id="dzn-V0-Ny3"/>
                         <outletCollection property="cardButtons" destination="SIH-Ko-q9W" collectionClass="NSMutableArray" id="MQY-gH-E8H"/>
                         <outletCollection property="cardButtons" destination="ASr-1w-Lpx" collectionClass="NSMutableArray" id="XSg-Vj-qTg"/>

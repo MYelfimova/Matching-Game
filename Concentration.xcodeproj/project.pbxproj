@@ -17,8 +17,10 @@
 		45E3A6BD2387FC5F0077C891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E3A6BB2387FC5F0077C891 /* LaunchScreen.storyboard */; };
 		4C2CD76523CA0FFE001C498E /* card_match.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76123CA0FFE001C498E /* card_match.wav */; };
 		4C2CD76623CA0FFE001C498E /* btn_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76223CA0FFE001C498E /* btn_click.wav */; };
-		4C2CD76723CA0FFE001C498E /* bg_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76323CA0FFE001C498E /* bg_music.mp3 */; };
 		4C2CD76823CA0FFE001C498E /* card_flip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD76423CA0FFE001C498E /* card_flip.wav */; };
+		4CA7F12C23D6FE540037CC6D /* timeIsUpSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7F12B23D6FE540037CC6D /* timeIsUpSound.wav */; };
+		4CA7F12E23D716060037CC6D /* timeRunningOut.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7F12D23D716060037CC6D /* timeRunningOut.wav */; };
+		4CA7F13023D73C4B0037CC6D /* bg_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4CA7F12F23D73C4B0037CC6D /* bg_music.wav */; };
 		4CDE7C9C23D30C6900AEEADD /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE7C9B23D30C6900AEEADD /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +37,10 @@
 		45E3A6BE2387FC5F0077C891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C2CD76123CA0FFE001C498E /* card_match.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = card_match.wav; path = sounds/card_match.wav; sourceTree = SOURCE_ROOT; };
 		4C2CD76223CA0FFE001C498E /* btn_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = btn_click.wav; path = sounds/btn_click.wav; sourceTree = SOURCE_ROOT; };
-		4C2CD76323CA0FFE001C498E /* bg_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bg_music.mp3; path = sounds/bg_music.mp3; sourceTree = SOURCE_ROOT; };
 		4C2CD76423CA0FFE001C498E /* card_flip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = card_flip.wav; path = sounds/card_flip.wav; sourceTree = SOURCE_ROOT; };
+		4CA7F12B23D6FE540037CC6D /* timeIsUpSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = timeIsUpSound.wav; path = sounds/timeIsUpSound.wav; sourceTree = SOURCE_ROOT; };
+		4CA7F12D23D716060037CC6D /* timeRunningOut.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = timeRunningOut.wav; path = sounds/timeRunningOut.wav; sourceTree = SOURCE_ROOT; };
+		4CA7F12F23D73C4B0037CC6D /* bg_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bg_music.wav; path = sounds/bg_music.wav; sourceTree = SOURCE_ROOT; };
 		4CDE7C9B23D30C6900AEEADD /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +92,9 @@
 		4C2CD76023CA0FD3001C498E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				4C2CD76323CA0FFE001C498E /* bg_music.mp3 */,
+				4CA7F12F23D73C4B0037CC6D /* bg_music.wav */,
+				4CA7F12D23D716060037CC6D /* timeRunningOut.wav */,
+				4CA7F12B23D6FE540037CC6D /* timeIsUpSound.wav */,
 				4C2CD76223CA0FFE001C498E /* btn_click.wav */,
 				4C2CD76423CA0FFE001C498E /* card_flip.wav */,
 				4C2CD76123CA0FFE001C498E /* card_match.wav */,
@@ -155,11 +161,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2CD76523CA0FFE001C498E /* card_match.wav in Resources */,
-				4C2CD76723CA0FFE001C498E /* bg_music.mp3 in Resources */,
+				4CA7F12E23D716060037CC6D /* timeRunningOut.wav in Resources */,
+				4CA7F13023D73C4B0037CC6D /* bg_music.wav in Resources */,
 				45E3A6BD2387FC5F0077C891 /* LaunchScreen.storyboard in Resources */,
 				4C2CD76623CA0FFE001C498E /* btn_click.wav in Resources */,
 				45E3A6BA2387FC5F0077C891 /* Assets.xcassets in Resources */,
 				4C2CD76823CA0FFE001C498E /* card_flip.wav in Resources */,
+				4CA7F12C23D6FE540037CC6D /* timeIsUpSound.wav in Resources */,
 				45E3A6B82387FC570077C891 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

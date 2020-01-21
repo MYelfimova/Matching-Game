@@ -20,15 +20,23 @@ class ViewController: UIViewController {
     let buttonClickSound = URL(fileURLWithPath: Bundle.main.path(forResource: "btn_click", ofType: "wav")!)
     let cardFlipSound = URL(fileURLWithPath: Bundle.main.path(forResource: "card_flip", ofType: "wav")!)
     let cardMatchSound = URL(fileURLWithPath: Bundle.main.path(forResource: "card_match", ofType: "wav")!)
+    let timeIsUpSound = URL(fileURLWithPath: Bundle.main.path(forResource: "timeIsUpSound", ofType: "wav")!)
+    let timeRunningOut = URL(fileURLWithPath: Bundle.main.path(forResource: "timeRunningOut", ofType: "wav")!)
     // >finished defining all my sounds
+    
+    // defining countdown timer
+    var timer = Timer()
+    var secondsTimer = 45
+    //>finished defining timer
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let url = Bundle.main.url(forResource: "bg_music", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "bg_music", withExtension: "wav") else { return }
         let playerItem = AVPlayerItem(asset: AVAsset(url: url))
         playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: playerItem)
         queuePlayer.play()
+        timer = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
     }
     
     lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
@@ -41,6 +49,7 @@ class ViewController: UIViewController {
     
     @IBAction func SoundOnOff(_ sender: UIButton) {
         playSound(soundName: buttonClickSound)
+        
         if bgMusicIsPlaying == true{
             queuePlayer.pause()
             bgMusicIsPlaying = false
@@ -54,12 +63,16 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var pointsCountLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        playSound(soundName: buttonClickSound)
+        startNewGame()
+    }
     
     @IBAction func pausePopUp(_ sender: UIButton) {
         playSound(soundName: buttonClickSound)
-//        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-//        updateViewFromModel()
-//        emojiTheme = updateEmoji(5.arc4random)
+        //timer.invalidate()
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pausePopUpID") as! PopUpViewController
         
         self.addChild(popOverVC)
@@ -108,10 +121,12 @@ class ViewController: UIViewController {
                 }
             }
         }
-        updateLabels(points: game.pointsCount)
+        updateLabels(labelName: pointsCountLabel, value: game.pointsCount)
+        updateLabels(labelName: timerLabel, value: secondsTimer)
     }
-    func updateLabels(points: Int ) {
-        pointsCountLabel.text = "\(points)"
+    
+    func updateLabels(labelName: UILabel!, value: Int ) {
+        labelName.text = "\(value)"
     }
     
     func playSound(soundName:URL){
@@ -122,7 +137,33 @@ class ViewController: UIViewController {
            print("couldn't load file :\(soundName)")
         }
     }
+    
+    func startNewGame(){
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        secondsTimer = 45
+        //timer.fire()
+        //timer = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(ViewController.counter), userInfo: nil, repeats: false)
+        updateViewFromModel()
+        emojiTheme = updateEmoji(5.arc4random)
+    }
       
+    @objc func counter() {
+        secondsTimer -= 1
+        updateLabels(labelName: timerLabel, value: secondsTimer)
+        
+        switch secondsTimer{
+        case 0:
+            //timer.invalidate()
+            startNewGame()
+        case 2:
+            playSound(soundName: timeIsUpSound)
+        case 5:
+            playSound(soundName: timeRunningOut)
+        default: break
+        }
+        
+    }
+    
     lazy var emojiTheme = updateEmoji(5.arc4random)
     
     var emoji = Dictionary<Card, String>()
